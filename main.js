@@ -63,5 +63,12 @@ function updateSigninStatus(isSignedIn) {
 
   // Get channel from api
   function getChannel(channel) {
-    console.log(channel);
+    gapi.client.youtube.channels.list({
+      part: 'snippet,contentDetails,statistics',
+      forUsername: channel
+    })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => alert('No channel by that name!'));
   }
