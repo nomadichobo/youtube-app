@@ -102,6 +102,6 @@ function updateSigninStatus(isSignedIn) {
       .catch(err => alert('No channel by that name!'));
     }
 
-    function numberWithCommas = (x) {
+    function numberWithCommas (x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
