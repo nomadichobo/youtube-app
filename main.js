@@ -111,12 +111,12 @@ function updateSigninStatus(isSignedIn) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
-    function requestVideoPlaylist(playListId) {
+    function requestVideoPlaylist(playlistId) {
       const requestOptions = {
         playListId: playListId,
         part: 'snippet',
         maxResults: 10
-      }
+      };
       const request = gapi.client.youtube.playlistItems.list(requestOptions);
 
       request.execute(response => {
