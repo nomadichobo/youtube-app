@@ -124,7 +124,7 @@ function updateSigninStatus(isSignedIn) {
         console.log(response);
         // Fetch array of items
         const playListItems = response.result.items;
-        if(playlistItems) {
+        if(playListItems) {
           let output = '<h4 class="center-align">Latest Videos</h4>'
 
           // Loop through videos and append output
