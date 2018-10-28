@@ -62,7 +62,8 @@ function updateSigninStatus(isSignedIn) {
   }
 
   // Channel search
-  getChannel(channelInput.value);
+  console.log(channelInput.value);
+//getChannel(channelInput.value);
 
   // Display Channel Info
   function showChannelData(data) {
