@@ -98,10 +98,28 @@ function updateSigninStatus(isSignedIn) {
           <a class="btn grey darken-2" target="_blank" href="https://youtube.com/${channel.snippet.customUrl}">Visit Channel</a>
         `;
         showChannelData(output);
+
+        const playListId = channel.contentDetails.relatedPlaylists.uploads;
+        requestVideoPlaylist(playListId);
+
       })
       .catch(err => alert('No channel by that name!'));
     }
 
+    // Format numbers
     function numberWithCommas (x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function requestVideoPlaylist(playListId) {
+      const requestOptions = {
+        playListId: playListId,
+        part: 'snippet',
+        maxResults: 10
+      }
+      const request = gapi.client.youtube.playlistItems.list(requestOptions);
+
+      request.execute(response => {
+        console.log(response);
+      });
     }
