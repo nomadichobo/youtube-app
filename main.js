@@ -61,6 +61,10 @@ function updateSigninStatus(isSignedIn) {
     gapi.auth2.getAuthInstance().signOut();
   }
 
+  // Channel search
+  const channelInput = document.getElementById('channel-input');
+  getChannel(channelInput.value);
+
   // Display Channel Info
   function showChannelData(data) {
     const channelData = document.getElementById('channel-data');
@@ -83,7 +87,7 @@ function updateSigninStatus(isSignedIn) {
             <li class="collection-item">ID: ${channel.id}</li>
             <li class="collection-item">Subscribers: ${channel.statistics.subscriberCount}</li>
             <li class="collection-item">Views: ${channel.statistics.viewCount}</li>
-            <li class="collection-item">Videoss: ${channel.statistics.videoCount}</li>
+            <li class="collection-item">Videos: ${channel.statistics.videoCount}</li>
           </ul>
           <p>${channel.snippet.description}</p>
           <hr>
