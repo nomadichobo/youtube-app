@@ -128,7 +128,7 @@ function updateSigninStatus(isSignedIn) {
           let output = '<h4 class="center-align">Latest Videos</h4>'
 
           // Loop through videos and append output
-          playlistItems.forEach(item => {
+          playListItems.forEach(item => {
             const videoId = item.snippet.resourceId.videoId;
             output += `
               <div class="col s3">
