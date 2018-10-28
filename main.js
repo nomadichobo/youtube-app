@@ -124,4 +124,4 @@ function updateSigninStatus(isSignedIn) {
 
       request.execute(response => {
         console.log(response);
-    }
+      }
