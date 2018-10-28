@@ -63,5 +63,5 @@ function updateSigninStatus(isSignedIn) {
 
   // Get channel from api
   function getChannel(channel) {
-
+    console.log(channel);
   }
