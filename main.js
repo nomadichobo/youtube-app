@@ -61,9 +61,13 @@ function updateSigninStatus(isSignedIn) {
     gapi.auth2.getAuthInstance().signOut();
   }
 
-  // Channel search
-  console.log(channelInput.value);
-//getChannel(channelInput.value);
+  // Channel search form
+  channelForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const channel = channelInput.value;
+    getChannel(channel);
+  });
+
 
   // Display Channel Info
   function showChannelData(data) {
