@@ -91,7 +91,7 @@ function updateSigninStatus(isSignedIn) {
             <li class="collection-item">Title: ${channel.snippet.title}</li>
             <li class="collection-item">ID: ${channel.id}</li>
             <li class="collection-item">Subscribers: ${numberWithCommas(channel.statistics.subscriberCount)}</li>
-            <li class="collection-item">Views: ${channel.statistics.viewCount.toLocaleString('en')}</li>
+            <li class="collection-item">Views: ${numberWithCommas(channel.statistics.viewCount)}</li>
             <li class="collection-item">Videos: ${numberWithCommas(channel.statistics.videoCount)}</li>
           </ul>
           <p>${channel.snippet.description}</p>
@@ -124,4 +124,4 @@ function updateSigninStatus(isSignedIn) {
 
       request.execute(response => {
         console.log(response);
-      }
+      });
