@@ -101,8 +101,7 @@ function updateSigninStatus(isSignedIn) {
         showChannelData(output);
 
         const playListId = channel.contentDetails.relatedPlaylists.uploads;
-        console.log(playListId);
-        //requestVideoPlaylist(playListId);
+        requestVideoPlaylist(playListId);
 
       })
       .catch(err => alert('No channel by that name!'));
