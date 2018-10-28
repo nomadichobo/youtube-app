@@ -101,7 +101,7 @@ function updateSigninStatus(isSignedIn) {
 
         const playListId = channel.contentDetails.relatedPlaylists.uploads;
         console.log(playListId);
-        //requestVideoPlaylist(playListId);
+        requestVideoPlaylist(playListId);
 
       })
       .catch(err => alert('No channel by that name!'));
@@ -112,9 +112,9 @@ function updateSigninStatus(isSignedIn) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
-    function requestVideoPlaylist(playlistId) {
+    function requestVideoPlaylist(id) {
       const requestOptions = {
-        playListId: playListId,
+        playListId: id,
         part: 'snippet',
         maxResults: 10
       };
